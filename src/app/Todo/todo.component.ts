@@ -17,4 +17,8 @@ export class Todocomponent {
   todoAddHandler=(todoItem: string)=>{
     this.todolist.push(todoItem)
   }
+
+  todoremovelist=(myIndex:any)=>{
+    this.todolist.splice(myIndex)
+}
 }

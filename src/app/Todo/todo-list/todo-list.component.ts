@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,12 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
+  @Output() todoremoveEvent = new EventEmitter();
   @Input() todolist: string[]=[];
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  removetodo=(myIndex: number)=>{
+    this.todoremoveEvent.emit(myIndex)
   }
 
 }
